@@ -542,3 +542,19 @@ add_action( 'init', 'z_disable_emojis' );
 function z_disable_emojis_tinymce( $plugins ) {
 	return array_diff( $plugins, array( 'wpemoji' ) );
 }
+
+ 
+function z_excerpt($text, $raw_excerpt) {
+    if( ! $raw_excerpt ) {
+        #$content = apply_filters( 'the_content', get_the_content() );
+	$content = apply_filters( 'the_content', strip_shortcodes( get_the_content() ) );
+	$content = preg_replace("/<pre([\s\S]*?)<\/pre>/","",$content);
+	$content = preg_replace("/<blockquote>([\s\S]*?)<\/blockquote>/","",$content);
+	$end = strpos($content,'</p>',strpos($content,'</p>')+4);
+        $text = substr( $content, 0, $end + 4 );
+	#$text = preg_replace("/<pre (.*?)<\/pre\>/i","",$text);
+	$text = preg_replace("/<img[^>]+\>/i", "", $text);
+    }
+    return $text;
+}
+add_filter( 'wp_trim_excerpt', 'z_excerpt', 10, 2 );
