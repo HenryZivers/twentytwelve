@@ -562,3 +562,11 @@ function z_excerpt($text, $raw_excerpt) {
     return $text;
 }
 add_filter( 'wp_trim_excerpt', 'z_excerpt', 10, 2 );
+
+function z_remove_cssjs_ver( $src ) {
+	if( strpos( $src, 'ver=' ) )
+		$src = remove_query_arg( 'ver', $src );
+	return $src;
+}
+add_filter( 'style_loader_src', 'z_remove_cssjs_ver', 999 );
+add_filter( 'script_loader_src', 'z_remove_cssjs_ver', 999 );
