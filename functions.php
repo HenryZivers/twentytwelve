@@ -553,7 +553,8 @@ function z_excerpt($text, $raw_excerpt) {
 			'/<h1([\s\S]*?)<\/h1>/',
 			'/<h2([\s\S]*?)<\/h2>/',
 			'/<h3([\s\S]*?)<\/h3>/',
-			'/<strong>([\s\S]*?)<\/strong>/');
+			'/<strong>([\s\S]*?)<\/strong>/',
+			'/<li([\s\S]*?)<\/li>/');
 	$content = preg_replace($patterns,'',$content);
 	$end = strpos($content,'</p>',strpos($content,'</p>')+4);
         $text = substr( $content, 0, $end + 4 );
