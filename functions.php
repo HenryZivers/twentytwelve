@@ -548,11 +548,15 @@ function z_excerpt($text, $raw_excerpt) {
     if( ! $raw_excerpt ) {
         #$content = apply_filters( 'the_content', get_the_content() );
 	$content = apply_filters( 'the_content', strip_shortcodes( get_the_content() ) );
-	$content = preg_replace("/<pre([\s\S]*?)<\/pre>/","",$content);
-	$content = preg_replace("/<blockquote>([\s\S]*?)<\/blockquote>/","",$content);
+	$patterns = array('/<pre([\s\S]*?)<\/pre>/',
+			'/<blockquote>([\s\S]*?)<\/blockquote>/',
+			'/<h1([\s\S]*?)<\/h1>/',
+			'/<h2([\s\S]*?)<\/h2>/',
+			'/<h3([\s\S]*?)<\/h3>/',
+			'/<strong>([\s\S]*?)<\/strong>/');
+	$content = preg_replace($patterns,'',$content);
 	$end = strpos($content,'</p>',strpos($content,'</p>')+4);
         $text = substr( $content, 0, $end + 4 );
-	#$text = preg_replace("/<pre (.*?)<\/pre\>/i","",$text);
 	$text = preg_replace("/<img[^>]+\>/i", "", $text);
     }
     return $text;
