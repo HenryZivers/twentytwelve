@@ -1,5 +1,5 @@
 /*
-Theme Name: 在你身上流动的河
+Theme Name: ZIVERS
 Theme URI: https://www.zivers.com/
 Author: Henry Zivers
 Author URI: https://www.zivers.com/
@@ -8,7 +8,7 @@ Version: 1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-Text Domain: zivers
+Text Domain: zivers.com
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -193,6 +193,9 @@ img {
 	text-transform: uppercase;
 	color: #636363;
 }
+.archive-title {
+	margin-left: 25px;
+}
 
 /* Shared Post Format styling */
 article.format-quote footer.entry-meta,
@@ -307,7 +310,7 @@ input[type="reset"]:active {
 }
 .bypostauthor cite span {
 	color: #fff;
-	background-color: #21759b;
+	background-color: #357784;
 	background-image: none;
 	border: 1px solid #1f6f93;
 	border-radius: 2px;
@@ -497,7 +500,7 @@ body.custom-font-enabled {
 a {
 	outline: none;
 	text-decoration: none;
-	color: #21759b;
+	color: #357784;
 }
 a:hover {
 	color: #0f3647;
@@ -564,7 +567,7 @@ a:hover {
 }
 .site-header h1 a:hover,
 .site-header h2 a:hover {
-	color: #21759b;
+	color: #357784;
 }
 .site-header h1 {
 	font-size: 24px;
@@ -603,7 +606,7 @@ a:hover {
 }
 .main-navigation a:hover,
 .main-navigation a:focus {
-	color: #21759b;
+	color: #357784;
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
@@ -657,7 +660,7 @@ section[role="banner"] {
 	color: #757575;
 }
 .widget-area .widget a:hover {
-	color: #21759b;
+	color: #357784;
 }
 .widget-area .widget a:visited {
 	color: #9f9f9f;
@@ -686,7 +689,7 @@ footer[role="contentinfo"] a {
 	color: #686868;
 }
 footer[role="contentinfo"] a:hover {
-	color: #21759b;
+	color: #357784;
 }
 
 
@@ -735,7 +738,7 @@ footer[role="contentinfo"] a:hover {
 }
 .comments-link a:hover,
 .entry-meta a:hover {
-	color: #21759b;
+	color: #357784;
 }
 article.sticky .featured-post {
 	border-top: 4px double #ededed;
@@ -810,8 +813,8 @@ article.sticky .featured-post {
 .entry-summary p,
 .comment-content p,
 .mu_register p {
-	margin: 0 0 24px;
-	margin: 0 0 1.714285714rem;
+	margin: 0 0 10px;
+	margin: 0 0 0.7142857143rem;
 	line-height: 1.714285714;
 }
 .entry-content a:visited,
@@ -974,10 +977,11 @@ img.aligncenter,
 }
 .site-content article {
 	border-bottom: 1px solid #ededed;
-	margin-bottom: 72px;
-	margin-bottom: 5.142857143rem;
-	padding-bottom: 24px;
-	padding-bottom: 1.714285714rem;
+	margin-bottom: 25px;
+	margin-bottom: 1.785714286rem;
+	margin-left: 25px;
+	padding-bottom: 20px;
+	padding-bottom: 1.428571429rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -1181,7 +1185,7 @@ article.format-quote .entry-content blockquote {
 	color: #757575;
 }
 .format-status .entry-header header a:hover {
-	color: #21759b;
+	color: #357784;
 }
 .format-status .entry-header img {
 	float: left;
@@ -1243,7 +1247,7 @@ article.format-quote .entry-content blockquote {
 	color: #5e5e5e;
 }
 .comments-area article header a:hover {
-	color: #21759b;
+	color: #357784;
 }
 .comments-area article header cite a {
 	color: #444;
@@ -1292,7 +1296,7 @@ a.comment-edit-link {
 }
 a.comment-reply-link:hover,
 a.comment-edit-link:hover {
-	color: #21759b;
+	color: #357784;
 }
 .commentlist .pingback {
 	line-height: 1.714285714;
@@ -1388,7 +1392,7 @@ a.comment-edit-link:hover {
 	color: #757575;
 }
 .template-front-page .widget-area .widget li a:hover {
-	color: #21759b;
+	color: #357784;
 }
 .template-front-page .widget-area .widget_text img {
 	float: left;
@@ -1503,10 +1507,11 @@ img#wpstats {
 	.widget-area {
 		float: right;
 		width: 26.041666667%;
+		margin-right: 25px;
 	}
 	.site-header h1,
 	.site-header h2 {
-		text-align: left;
+		text-align: center;
 	}
 	.site-header h1 {
 		font-size: 28px !important;
@@ -1519,7 +1524,7 @@ img#wpstats {
 		border-bottom: 1px solid #ededed;
 		border-top: 1px solid #ededed;
 		display: inline-block !important;
-		text-align: left;
+		text-align: center;
 		width: 100%;
 	}
 	.main-navigation ul {
@@ -1658,10 +1663,12 @@ img#wpstats {
 	body .site {
 		padding: 0 40px;
 		padding: 0 2.857142857rem;
+/*
 		margin-top: 48px;
 		margin-top: 3.428571429rem;
 		margin-bottom: 48px;
 		margin-bottom: 3.428571429rem;
+*/
 		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	}
 	body.custom-background-empty {
@@ -1802,8 +1809,8 @@ img#wpstats {
 }
 	
 .tagcloud a:hover {
-	background-color: #75a5b5;
-	border-color: #75a5b5;
+	background-color: #357784;
+	border-color: #357784;
 }
 
 .wp-pagenavi

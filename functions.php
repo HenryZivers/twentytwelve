@@ -370,7 +370,8 @@ function twentytwelve_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
 
-	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+	//$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+	$date = sprintf( '<span title="%2$s" rel="bookmark"><time class="entry-date" datetime    ="%3$s">%4$s</time><span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -571,3 +572,18 @@ function z_remove_cssjs_ver( $src ) {
 }
 add_filter( 'style_loader_src', 'z_remove_cssjs_ver', 999 );
 add_filter( 'script_loader_src', 'z_remove_cssjs_ver', 999 );
+
+function z_remove_wp_ver() {
+  return '';
+}
+add_filter('the_generator', 'z_remove_wp_ver');
+
+
+
+remove_action('wp_head','wp_generator');
+remove_action('wp_head','wlwmanifest_link');
+remove_action('wp_head','rsd_link');
+remove_action('wp_head','adjacent_posts_rel_link_wp_head', 10, 0 );
+remove_action('wp_head','feed_links', 2 );
+remove_action('wp_head','feed_links_extra', 3 );
+remove_action('wp_head','wp_shortlink_wp_head', 10, 0 );
