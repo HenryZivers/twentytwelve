@@ -22,8 +22,8 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '-', true, 'right' ); ?></title>
-<meta name="keywords"  content="在你身上流动的河,张河,ZIVERS,互联网,个人博客,IT,Web开发" />
-<meta name="description"  content="在你身上流动的河，是一个关注互联网、Web开发技术、IT发展的个人博客，作者是张河"/>
+<meta name="keywords"  content="张河,ZIVERS,互联网,个人博客,Web开发"/>
+<meta name="description"  content="在你身上流动的河，关注互联网的个人博客，作者是张河"/>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" style="font-family: Microsoft YaHei;font-weight: normal" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<h2 class="site-description">&nbsp-&nbsp<?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 			
 		<nav id="site-navigation" class="main-navigation" role="navigation">
