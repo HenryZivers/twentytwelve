@@ -1215,8 +1215,8 @@ article.format-quote .entry-content blockquote {
 	margin: 1.714285714rem 0;
 }
 .comments-area article header {
-	margin: 0 0 48px;
-	margin: 0 0 3.428571429rem;
+	margin: 0 0 20px;
+	margin: 0 0 1.428571429rem;
 	overflow: hidden;
 	position: relative;
 }
@@ -1228,8 +1228,8 @@ article.format-quote .entry-content blockquote {
 .comments-area article header cite,
 .comments-area article header time {
 	display: block;
-	margin-left: 85px;
-	margin-left: 6.071428571rem;
+	margin-left: 60px;
+	margin-left: 4.285714286rem;
 }
 .comments-area article header cite {
 	font-style: normal;
