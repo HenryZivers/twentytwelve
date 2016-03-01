@@ -587,3 +587,13 @@ remove_action('wp_head','adjacent_posts_rel_link_wp_head', 10, 0 );
 remove_action('wp_head','feed_links', 2 );
 remove_action('wp_head','feed_links_extra', 3 );
 remove_action('wp_head','wp_shortlink_wp_head', 10, 0 );
+
+
+
+function no_self_ping( &$links ) {  
+	$home = get_option( 'home' );  
+	foreach ( $links as $l => $link )  
+	if ( 0 === strpos( $link, $home ) )  
+	unset($links[$l]);  
+}  
+add_action( 'pre_ping', 'no_self_ping' );  
