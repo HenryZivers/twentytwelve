@@ -555,7 +555,8 @@ function z_excerpt($text, $raw_excerpt) {
 			'/<h2([\s\S]*?)<\/h2>/',
 			'/<h3([\s\S]*?)<\/h3>/',
 			'/<strong>([\s\S]*?)<\/strong>/',
-			'/<li([\s\S]*?)<\/li>/');
+			'/<li([\s\S]*?)<\/li>/',
+			'/<ul([\s\S]*?)<\/ul>/');
 	$content = preg_replace($patterns,'',$content);
 	$end = strpos($content,'</p>',strpos($content,'</p>')+4);
         $text = substr( $content, 0, $end + 4 );
@@ -596,4 +597,49 @@ function no_self_ping( &$links ) {
 	if ( 0 === strpos( $link, $home ) )  
 	unset($links[$l]);  
 }  
-add_action( 'pre_ping', 'no_self_ping' );  
+add_action( 'pre_ping', 'no_self_ping' ); 
+
+
+#add_filter('tag_link', 'z_html_tag_link', 10, 2);
+#
+#function z_html_tag_link($tag_link, $tag_id) {
+#    return rtrim($tag_link, '/') . '.html';
+#}
+
+
+
+add_action( 'admin_menu', 'create_markdown' );
+add_action( 'save_post', 'save_markdown', 10, 2 );
+
+function create_markdown() {
+    add_meta_box( 'markdown_box', 'Markdown', 'markdown_html', 'post', 'normal', 'high' );
+}
+
+function markdown_html( $object, $box ) { ?>
+        <textarea name="markdown" id="markdown" cols="60" oninput ="markdownEditorChanged()" rows="15" style="width: 100%; height:100%"><?php echo htmlspecialchars (get_post_meta( $object->ID, 'markdown', true )); ?></textarea>
+<?php }
+
+function save_markdown( $post_id, $post ) {
+    if ( !current_user_can( 'edit_post', $post_id ) )
+        return $post_id;
+
+    $meta_value = get_post_meta( $post_id, 'markdown', true );
+    $new_meta_value = $_POST['markdown'];
+
+    if ( $new_meta_value && '' == $meta_value )
+        add_post_meta( $post_id, 'markdown', $new_meta_value, true );
+
+    elseif ( $new_meta_value != $meta_value )
+        update_post_meta( $post_id, 'markdown', $new_meta_value );
+
+    elseif ( '' == $new_meta_value && $meta_value )
+        delete_post_meta( $post_id, 'markdown', $meta_value );
+}
+
+
+function markdown_script() {
+    wp_enqueue_script('markdown', get_template_directory_uri() . '/js/marked.js' );
+    wp_enqueue_script('makemarkdown', get_template_directory_uri() . '/js/markdown-editor.js');
+}
+
+add_action( 'admin_enqueue_scripts', 'markdown_script'); 
