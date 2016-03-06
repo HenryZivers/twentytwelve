@@ -620,8 +620,9 @@ function markdown_html( $object, $box ) { ?>
 <?php }
 
 function save_markdown( $post_id, $post ) {
-    if ( !current_user_can( 'edit_post', $post_id ) )
+    if ( !current_user_can( 'edit_post', $post_id ) ){
         return $post_id;
+    }
 
     $meta_value = get_post_meta( $post_id, 'markdown', true );
     $new_meta_value = $_POST['markdown'];
