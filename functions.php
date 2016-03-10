@@ -509,12 +509,12 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 #remove_action('admin_init', '_maybe_update_themes');  // 禁止 WordPress 更新主题
 
 
-function z_cache_gravatar($avatar) {
-    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),
-"gravatar.zivers.com",$avatar);
-    return $avatar;
-}
-add_filter( 'get_avatar', 'z_cache_gravatar', 10, 3 );
+#function z_cache_gravatar($avatar) {
+#    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),
+#"gravatar.zivers.com",$avatar);
+#    return $avatar;
+#}
+#add_filter( 'get_avatar', 'z_cache_gravatar', 10, 3 );
 
 
 function z_tag_cloud_filter($args = array()) {
@@ -556,7 +556,8 @@ function z_excerpt($text, $raw_excerpt) {
 			'/<h3([\s\S]*?)<\/h3>/',
 			'/<strong>([\s\S]*?)<\/strong>/',
 			'/<li([\s\S]*?)<\/li>/',
-			'/<ul([\s\S]*?)<\/ul>/');
+			'/<ul([\s\S]*?)<\/ul>/',
+			'/<p><([\s\S]*?)><\/p>/');
 	$content = preg_replace($patterns,'',$content);
 	$end = strpos($content,'</p>',strpos($content,'</p>')+4);
         $text = substr( $content, 0, $end + 4 );

@@ -886,6 +886,7 @@ article.sticky .featured-post {
 .entry-content pre,
 .comment-content pre {
 	border: 1px solid #ededed;
+	background-color: rgba(0,0,0,0.05);
 	color: #666;
 	font-family: Consolas, Monaco, Lucida Console, monospace;
 	font-size: 12px;
