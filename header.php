@@ -19,7 +19,8 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<!--<meta charset="<?php bloginfo( 'charset' ); ?>" />-->
+<meta http-equiv="content-type" content="text/html; charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '-', true, 'right' ); ?></title>
 <meta name="keywords"  content="张河,ZIVERS,互联网,个人博客,Web开发"/>
@@ -31,7 +32,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-<!--<script>
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -39,7 +40,7 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>-->
+</script>
 </head>
 
 <body <?php body_class(); ?>>

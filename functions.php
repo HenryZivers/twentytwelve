@@ -644,4 +644,15 @@ function markdown_script() {
     wp_enqueue_script('makemarkdown', get_template_directory_uri() . '/js/markdown-editor.js');
 }
 
-add_action( 'admin_enqueue_scripts', 'markdown_script'); 
+add_action( 'admin_enqueue_scripts', 'markdown_script');
+
+
+//不显示特定目录
+function z_cat_is_home( $query ) {
+    $CATEGORY_ID = 54;
+    //如果想要特定目录不在首页显示则定义为负值
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', $CATEGORY_ID );
+    }
+}
+add_action( 'pre_get_posts', 'z_cat_is_home' );
