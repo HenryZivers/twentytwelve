@@ -268,6 +268,9 @@ input[type="button"],
 input[type="reset"] {
 	cursor: pointer;
 }
+input#searchsubmit {
+	display: none;
+}
 button[disabled],
 input[disabled] {
 	cursor: default;
@@ -632,6 +635,7 @@ section[role="banner"] {
 	-moz-hyphens: auto;
 	hyphens: auto;
 	margin-left: 30px;
+	margin-left: 2.142857142rem;
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 	word-wrap: break-word;
@@ -670,7 +674,13 @@ section[role="banner"] {
 	color: #9f9f9f;
 }
 .widget-area #s {
-	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
+	margin-top: 10px;
+	margin-top: 0.714285714rem;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+	height: 20px;
+	height: 1.428571428rem;
+	width: 73.66666666666%; /* define a width to avoid dropping a wider submit button */
 }
 
 /* Footer */
@@ -1522,6 +1532,7 @@ img#wpstats {
 		font-size: 1.857142857rem;
 		line-height: 1.846153846;
 		margin-bottom: -50px;
+		margin-bottom: -3.571428571rem;
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
@@ -1796,8 +1807,10 @@ img#wpstats {
 
 .tagcloud a {
         padding: 3px 3px;
+	padding: 0.214285714rem 0.214285714rem;
         margin-right: 0;
 	margin-left: -3px;
+	margin-left: -0.214285714rem;
         margin-bottom: 4px;
         line-height: 100%;
         display: inline-block;
@@ -1846,8 +1859,10 @@ img#wpstats {
 .wp-pagenavi a:link,
 .wp-pagenavi a:visited,
 .wp-pagenavi a:active {
-	padding:6px 9px 6px 9px;
+	padding:6px 9px 6px 9px;i
+	padding: 0.428571429rem 0.642857142rem 0.428571429rem 0.642857142rem;
 	margin: 3px;
+	margin: 0.214285714rem;
 	text-decoration: none;
 	border: 1px solid #C8C8C2;
 	background: #FCFCFC;
@@ -1861,14 +1876,18 @@ img#wpstats {
 
 .wp-pagenavi span.pages {
 	padding:6px 9px 6px 9px;
+	padding: 0.428571429rem 0.642857142rem 0.428571429rem 0.642857142rem;
     	margin: 3px;
+	margin: 0.214285714rem;
     	color: #999;
 	display: none;
 }
 
 .wp-pagenavi span.current {
     	padding:6px 9px 6px 9px;
+	padding: 0.428571429rem 0.642857142rem 0.428571429rem 0.642857142rem;
     	margin: 3px;
+	margin: 0.214285714rem;
     	text-decoration: none;
     	border: 1px solid #a7a7a3;
     	background: #FCFCFC;
@@ -1878,7 +1897,9 @@ img#wpstats {
 
 .wp-pagenavi span.extend {
     	padding:6px 9px 6px 9px;
+	padding: 0.428571429rem 0.642857142rem 0.428571429rem 0.642857142rem;
     	margin: 3px;
+	margin: 0.214285714rem;
     	text-decoration: none;
     	border: 1px solid #C8C8C2;
     	background: #FCFCFC;
