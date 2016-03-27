@@ -1603,6 +1603,7 @@ img#wpstats {
 		width: 180px;
 		width: 12.85714286rem;
 		white-space: normal;
+		text-align: left;
 	}
 	.main-navigation li ul li a:hover,
 	.main-navigation li ul li a:focus {
