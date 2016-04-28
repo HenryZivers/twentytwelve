@@ -22,9 +22,9 @@
 <!--<meta charset="<?php bloginfo( 'charset' ); ?>" />-->
 <meta http-equiv="content-type" content="text/html; charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '-', true, 'right' ); ?></title>
-<meta name="keywords"  content="张河,ZIVERS,互联网,个人博客,Web开发"/>
-<meta name="description"  content="在你身上流动的河，关注互联网的个人博客，作者是张河"/>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<meta name="keywords"  content="张河,互联网,个人博客,DevOps"/>
+<meta name="description"  content="关注互联网，记录生活的个人博客，作者是张河"/>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
@@ -32,7 +32,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-<!--<script>
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -40,7 +40,7 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>-->
+</script>
 </head>
 
 <body <?php body_class(); ?>>
